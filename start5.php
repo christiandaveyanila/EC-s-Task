@@ -1,0 +1,10 @@
+<?php
+session_start();
+if($_SESSION["user"] != true){
+    header("refresh: 0; url=signupForm.php");
+}else{
+    header("refresh: 0; url=craftIt5.php");
+}
+    
+?>
+
