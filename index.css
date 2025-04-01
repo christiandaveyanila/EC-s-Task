@@ -1,0 +1,614 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+:root{
+    --green: #26a090;
+}
+
+:root {
+    --primary: #eeeeee;
+    --secondary: #227c70;
+    --green: #82cd47;
+    --secondary-light: rgb(34, 124, 112, 0.2);
+    --secondary-light-2: rgb(127, 183, 126, 0.1);
+    --white: #fff;
+    --black: #393e46;
+  
+    --shadow: 0px 2px 8px 0px var(--secondary-light);
+  }
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+
+*::selection{
+    background: var(--green);
+    color: #fff;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+
+body{
+    background: #f7f7f7;
+    background-size: cover;
+    background-position: center;
+}
+
+section{
+    padding: 2rem 9%;
+    background: url(../images/sect2-6.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.heading{
+    margin-top: 5rem;
+    margin-bottom: 5rem ;
+    text-align: center;
+    font-size: 3.5rem;
+    padding: 1rem;
+    color: #505050;
+}
+
+.heading span{
+    color: var(--green);
+}
+
+.btn{
+    display: inline-block;
+    gap: 12rem;
+    padding: .8rem 3rem;
+    border: .2rem solid #6bbd99;
+    color: var(--green);
+    cursor: pointer;
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    margin-top: 1rem;
+}
+
+.btn::before{
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 0%;
+    height: 100%;
+    background: #6bbd99;
+    transition: .3s linear;
+    z-index: -1;
+}
+
+.btn:hover::before{
+    width: 100%;
+    left: 0;
+}
+
+.btn:hover{
+    color: #fff;
+}
+
+header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #c4e8c2;
+    padding: 2rem 9%;
+    box-shadow: 0 .5 1rem rgba(0, 0, 0, .1);
+}
+
+header #logo {
+    font-size: 2.5rem;  
+    padding-right: .5rem;
+    color: var(--green);
+}
+
+header #logo label{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: #505050;
+}
+
+header .navbar a{
+    font-size: 2rem;
+    margin-left: 2rem;
+    color: #505050;
+}
+
+header .navbar a:hover{
+    color: var(--green);
+}
+
+#menu-bar{
+    font-size: 3rem;
+    cursor: pointer;
+    color: #505050;
+    border: .1rem solid #505050;
+    border-radius: .3rem;
+    padding: .5rem 1.5rem;
+    display: none;
+}
+
+.profile-dropdown {
+    position: relative;
+    width: fit-content;
+  }
+  
+  .profile-dropdown-btn {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 400;
+    border-radius: 50px;
+    color: var(--black);
+    margin-left: 2rem;
+    margin-right: 2rem;
+    /* background-color: white;
+    box-shadow: var(--shadow); */
+  
+    cursor: pointer;
+    border: 1px solid var(--secondary);
+    transition: box-shadow 0.2s ease-in, background-color 0.2s ease-in,
+      border 0.3s;
+  }
+  
+  .profile-dropdown-btn:hover {
+    background-color: var(--secondary-light-2);
+    box-shadow: var(--shadow);
+  }
+  
+  .profile-img {
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background: url(../icons/userProfile.png);
+    background-size: cover;
+  }
+  
+  .profile-img i {
+    position: absolute;
+    right: 0;
+    bottom: -0.4rem;
+    right: -0.4rem;
+    font-size: 2.5rem;
+    color: #000;
+  }
+  
+  .profile-dropdown-list {
+    position: absolute;
+    top: 68px;
+    width: 220px;
+    right: 0;
+    background-color: var(--white);
+    border-radius: 10px;
+    max-height: 0;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: max-height 0.5s;
+  }
+  
+  .profile-dropdown-list hr {
+    border: 0.5px solid var(--green);
+  }
+  
+  .profile-dropdown-list.active {
+    max-height: 500px;
+  }
+  
+  .profile-dropdown-list-item {
+    padding: 0.5rem 0rem 0.5rem 1rem;
+    transition: background-color 0.2s ease-in, padding-left 0.2s;
+  }
+  
+  .profile-dropdown-list-item a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--black);
+  }
+  
+  .profile-dropdown-list-item i {
+    margin-right: 0.8rem;
+    font-size: 1.1rem;
+    width: 2.3rem;
+    height: 2.3rem;
+    background-color: var(--secondary);
+    color: var(--white);
+    line-height: 2.3rem;
+    text-align: center;
+    margin-right: 1rem;
+    border-radius: 50%;
+    transition: margin-right 0.3s;
+  }
+  
+  .profile-dropdown-list-item:hover {
+    padding-left: 1.5rem;
+    background-color: var(--secondary-light);
+  }
+
+.home{
+    margin-top: 3.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    min-height: 100vh;
+    align-items: center;
+    background: url(../images/home-bg.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home .content{
+    gap: 1.5rem;
+    flex: 1 1 40rem;
+    padding-top: 6.5rem;
+}
+
+.home .content a {
+    margin-right: 2rem;
+}
+
+.home .image{
+    flex: 1 3 40rem;
+}
+
+.home .image img{
+    width: 100%;
+    padding: 1rem;
+    animation: float 3s linear infinite;
+}
+
+@keyframes float{
+    0%, 100%{
+        transform: translateY(0rem);
+    }
+    50%{
+        transform: translateY(3rem);
+    }
+}
+
+.home .content h3{
+    font-size: 5rem;
+    color: #333;
+}
+
+.home .content p{
+    font-size: 1.7rem;
+    color: #666;
+    padding: 1rem 0;
+}
+
+.content .row{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+button{
+    background: var(--green);
+    color: #fff;
+    font-size: 1.6rem;
+    padding: 1rem 3rem;
+    border-radius: 3.5rem;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+button img{
+    width: 1.6rem;
+    margin-right: 1rem;
+}
+
+select{
+    flex: 1;
+    color: #fff;
+    background: var(--green);
+    height: 5rem;
+    padding: 0 2rem;
+    outline: 0;
+    border: 0;
+    border-radius: 3.5rem;
+    appearance: none;
+    background-image: url(../icons/dropdown.png);
+    background-repeat: no-repeat;
+    background-size: 1.5rem;
+    background-position-x: calc(100% - 2rem) ;
+    background-position-y: 2rem;
+}
+
+.container{
+    background: #c4e8c2;  
+    text-align: center;
+}
+
+.container .share a {
+    font-size: 24px;
+    color: inherit;
+    border: 1px solid #1c1b1bab;
+    width: 40px;
+    height: 40px;
+    line-height: 41px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 56%;
+    margin: 0px 8px;
+    opacity: 0.7;
+}
+
+.container .share a:hover {
+    opacity: 0.9;
+    color: var(--green);
+}
+
+.container .share{
+    margin-bottom: 40px;
+    margin-top: 16px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 150;
+    color: #000000;
+}
+
+.container .share{
+    display: inline-block;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.container .credit{
+    padding: 2.5rem 1rem;
+    color: #ffffff;
+    font-weight: normal;
+    font-size: 2rem;
+}
+
+.container .credit span{
+    color: var(--green)
+}
+
+#scroll{
+    position: fixed;
+    top: -120%;
+    right: 2rem;
+    padding: .5rem 1rem;
+    font-size: 4rem;
+    background: var(--green);
+    color: #fff;
+    border-radius: .5rem;
+    transition: 1s linear;
+}
+
+#scroll.active{
+    top: calc(100% - 12rem);
+}
+
+.loader-container{
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 10000;
+    background: #545454;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries */
+
+@media(max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    header{
+        padding: 2rem;
+    }
+
+    section{
+        padding: 2rem;
+        background: url(../images/sect2-6.png) no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+}
+
+@media(max-width:768px){
+
+    #menu-bar{
+        display: initial;
+    }
+
+    header #menu-bar{
+        margin-left: 2rem;
+    }
+
+    header .profile-dropdown{
+        margin-left: 40rem;
+    }
+
+    header .tap a{
+        margin-left: 40rem;
+    }
+
+    header{
+        justify-content:unset;
+    }
+
+    header .navbar{
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: #f7f7f7;
+        border-top: .1rem solid rgba(0, 0, 0, .1);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    
+    header .navbar a{
+        margin: 1.5rem;
+        padding: 1.5rem;
+        display: block;
+        border: .2rem solid rgba(0, 0, 0, .1);
+        border-left: .5rem solid var(--green);
+        background: #fff;
+    }
+
+
+}
+
+@media(max-width:568px){
+
+    
+
+    html{
+        font-size: 50%;
+    }
+
+    header #menu-bar{
+        margin-left: 2rem;
+    }
+
+    header .profile-dropdown{
+        margin-left: 30rem;
+    }
+
+    header .tap a{
+        margin-left: 30rem;
+    }
+
+    header{
+        justify-content:unset;
+    }
+
+    header .navbar{
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: #f7f7f7;
+        border-top: .1rem solid rgba(0, 0, 0, .1);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    
+    header .navbar a{
+        margin: 1.5rem;
+        padding: 1.5rem;
+        display: block;
+        border: .2rem solid rgba(0, 0, 0, .1);
+        border-left: .5rem solid var(--green);
+        background: #fff;
+    }
+
+}
+
+@media(max-width:436px){
+
+    
+
+    html{
+        font-size: 50%;
+    }
+
+    header #menu-bar{
+        margin-left: 2rem;
+    }
+
+    header .profile-dropdown{
+        margin-left: 15rem;
+    }
+
+    header .tap a{
+        margin-left: 15rem;
+    }
+
+    header{
+        justify-content:unset;
+    }
+
+    header .navbar{
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: #f7f7f7;
+        border-top: .1rem solid rgba(0, 0, 0, .1);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    
+    header .navbar a{
+        margin: 1.5rem;
+        padding: 1.5rem;
+        display: block;
+        border: .2rem solid rgba(0, 0, 0, .1);
+        border-left: .5rem solid var(--green);
+        background: #fff;
+    }
+
+}
