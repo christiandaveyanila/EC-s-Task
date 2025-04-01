@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+:root{
+    --green: #26a090;
+}
+
+:root {
+    --primary: #eeeeee;
+    --secondary: #227c70;
+    --green: #82cd47;
+    --secondary-light: rgb(34, 124, 112, 0.2);
+    --secondary-light-2: rgb(127, 183, 126, 0.1);
+    --white: #fff;
+    --black: #393e46;
+  
+    --shadow: 0px 2px 8px 0px var(--secondary-light);
+  }
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+
+*::selection{
+    background: var(--green);
+    color: #fff;
+}
+
+body{
+    margin: 2.5rem;
+     display: flex;
+     justify-content: center;
+     padding: 2rem 9%;
+    background: url(../images/home-bg.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    border: .1px solid #000;
+    border-radius: 1.5rem;
+    align-items: center;
+    height: 20rem;
+    width: 30rem; /* Adjust as needed */
+}
+
+.content {
+    text-align: center; /* Optionally, center-align the content horizontally */
+}
+
+span{
+    text-transform: uppercase;
+    color: red;
+    font-weight: 700;
+}
+
+p{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    background: #fff;
+    padding: 2rem;
+    border-radius: .7rem;
+    box-shadow: .1rem solid #393e46;
+}
+
+form a{
+    background: transparent;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: .3rem;
+    color: #000;
+    
+    border-radius: .3rem;
+}
+
+form a:hover{
+    text-decoration: underline;
+    font-weight: 700;
+    color: green;
+}
+
+form input{
+    background: transparent;
+    font-size: 1.2rem;
+    padding: .3rem;
+    font-weight: 700;
+    color: #000;
+    border-radius: .3rem;
+}
+
+form input:hover{
+    text-decoration: underline;
+    font-weight: 700;
+    color: red;
+}
